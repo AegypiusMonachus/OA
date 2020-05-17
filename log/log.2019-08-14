@@ -1,0 +1,516 @@
+2019-08-15 15:55:12,039 | ERROR | __init__.py | __init__ | 86 | alchemy_error_handler | (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([Errno 104] Connection reset by peer)')
+[SQL: SELECT tb_users.password AS tb_users_password, tb_users.id AS tb_users_id, tb_users.username AS tb_users_username, tb_users.enabled AS tb_users_enabled, tb_users.deleted AS tb_users_deleted, tb_users.`registrationTime` AS `tb_users_registrationTime`, tb_users.`registrationHost` AS `tb_users_registrationHost`, tb_users.phone AS tb_users_phone, tb_users.email AS tb_users_email, tb_users.google AS tb_users_google, tb_users.`verificationByGoogle` AS `tb_users_verificationByGoogle`, tb_users.`verificationByPhone` AS `tb_users_verificationByPhone`, tb_users.`verificationByEmail` AS `tb_users_verificationByEmail`, tb_users.`accumulatedSystemDeposit` AS `tb_users_accumulatedSystemDeposit`, tb_users.`systemDepositLimitOnce` AS `tb_users_systemDepositLimitOnce`, tb_users.`systemDepositLimitTotal` AS `tb_users_systemDepositLimitTotal`, tb_users.`systemDepositLimitCount` AS `tb_users_systemDepositLimitCount`, tb_users.`lastLoginTime` AS `tb_users_lastLoginTime`, tb_users.`lastLoginIP` AS `tb_users_lastLoginIP`, tb_users.`withdrawallimitOnce` AS `tb_users_withdrawallimitOnce`, tb_users.`withdrawallimitSumCeiling` AS `tb_users_withdrawallimitSumCeiling`, tb_users.`withdrawallimitSum` AS `tb_users_withdrawallimitSum`, tb_users.chat AS tb_users_chat, tb_users.remark AS tb_users_remark, tb_users.nickname AS tb_users_nickname, tb_users.head AS tb_users_head 
+FROM tb_users 
+WHERE tb_users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'param_1': 1, 'username_1': 'default'}]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 691, in _read_bytes
+    data = self._rfile.read(num_bytes)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 657, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 699, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,))
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query ([Errno 104] Connection reset by peer)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 2087, in preprocess_request
+    rv = func()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_httpauth.py", line 99, in decorated
+    if not self.authenticate(auth, password):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_httpauth.py", line 257, in authenticate
+    return self.verify_token_callback(token)
+  File "/home/yc/feature_As/app/auth/common/__init__.py", line 32, in verify_token
+    user = User.query.filter(User.username == 'default').first()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3215, in first
+    ret = list(self[0:1])
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3007, in __getitem__
+    return list(res)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3317, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3342, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 657, in _read_packet
+    packet_header = self._read_bytes(4)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 699, in _read_bytes
+    "Lost connection to MySQL server during query (%s)" % (e,))
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([Errno 104] Connection reset by peer)')
+[SQL: SELECT tb_users.password AS tb_users_password, tb_users.id AS tb_users_id, tb_users.username AS tb_users_username, tb_users.enabled AS tb_users_enabled, tb_users.deleted AS tb_users_deleted, tb_users.`registrationTime` AS `tb_users_registrationTime`, tb_users.`registrationHost` AS `tb_users_registrationHost`, tb_users.phone AS tb_users_phone, tb_users.email AS tb_users_email, tb_users.google AS tb_users_google, tb_users.`verificationByGoogle` AS `tb_users_verificationByGoogle`, tb_users.`verificationByPhone` AS `tb_users_verificationByPhone`, tb_users.`verificationByEmail` AS `tb_users_verificationByEmail`, tb_users.`accumulatedSystemDeposit` AS `tb_users_accumulatedSystemDeposit`, tb_users.`systemDepositLimitOnce` AS `tb_users_systemDepositLimitOnce`, tb_users.`systemDepositLimitTotal` AS `tb_users_systemDepositLimitTotal`, tb_users.`systemDepositLimitCount` AS `tb_users_systemDepositLimitCount`, tb_users.`lastLoginTime` AS `tb_users_lastLoginTime`, tb_users.`lastLoginIP` AS `tb_users_lastLoginIP`, tb_users.`withdrawallimitOnce` AS `tb_users_withdrawallimitOnce`, tb_users.`withdrawallimitSumCeiling` AS `tb_users_withdrawallimitSumCeiling`, tb_users.`withdrawallimitSum` AS `tb_users_withdrawallimitSum`, tb_users.chat AS tb_users_chat, tb_users.remark AS tb_users_remark, tb_users.nickname AS tb_users_nickname, tb_users.head AS tb_users_head 
+FROM tb_users 
+WHERE tb_users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'param_1': 1, 'username_1': 'default'}]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-08-15 15:57:11,780 | ERROR | __init__.py | __init__ | 86 | alchemy_error_handler | (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'cc111' in 'where clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/reports.py", line 1250, in get
+    tjbb_excel = execute(m_sql)[0]
+  File "/home/yc/feature_As/app/models/common/utils.py", line 5, in execute
+    result = db.session.execute(statement)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1268, in execute
+    clause, params or {}
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2019-08-15 15:57:22,413 | ERROR | __init__.py | __init__ | 86 | alchemy_error_handler | (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'cc111' in 'where clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/reports.py", line 1250, in get
+    tjbb_excel = execute(m_sql)[0]
+  File "/home/yc/feature_As/app/models/common/utils.py", line 5, in execute
+    result = db.session.execute(statement)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1268, in execute
+    clause, params or {}
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2019-08-15 15:58:40,892 | ERROR | __init__.py | __init__ | 86 | alchemy_error_handler | (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'cc111' in 'where clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/reports.py", line 1250, in get
+    tjbb_excel = execute(m_sql)[0]
+  File "/home/yc/feature_As/app/models/common/utils.py", line 5, in execute
+    result = db.session.execute(statement)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1268, in execute
+    clause, params or {}
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'cc111' in 'where clause'")
+[SQL: SELECT cc111,sum(betAmount),sum(bonus) ,count(username),
+							(select parentsInfo from blast_members where username = cc111)aa,
+							(select levelName from blast_member_level WHERE id = (SELECT grade FROM blast_members where  username = cc111)) levelName
+							FROM 
+							(SELECT username,(mode * beishu * actionNum) as betAmount,(mode * beishu * actionNum - bonus) bonus from blast_bets
+							WHERE kjTime >=1565712000 and kjTime <=1565798399 and state = 2 and username = cc111
+							UNION ALL
+							SELECT memberUsername as username,betAmount,(betAmount - bonus) as bonus from tb_bets_credit
+							WHERE drawTime >=1565712000 and drawTime <=1565798399 and state = 2 and memberUsername = cc111
+							UNION ALL
+							SELECT PlayerName as username,ValidBetAmount as betAmount,(ValidBetAmount - CusAccount) as bonus from tb_entertainment_city_bets_detail
+							WHERE ReckonTime >=1565712000 and ReckonTime <=1565798399 and PlayerName = cc111
+							and CONCAT(ECCode,'-',childType) in ('AG-1002', 'AG-1004', 'AG-1006', 'AG-1005', 'PT-1004', 'KAIYUAN-1003', 'kk-1001')) BETS GROUP BY 
+							username]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2019-08-15 18:19:10,033 | INFO | transactionDetails.py | transactionDetails | 148 | job_1 | 同步交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 开始
+2019-08-15 18:19:10,233 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步AG交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 开始
+2019-08-15 18:19:11,033 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Live","startDate":"2019-08-15 06:04:11","endDate":"2019-08-15 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1565864351"}
+2019-08-15 18:19:11,035 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=
+2019-08-15 18:19:11,036 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=
+2019-08-15 18:19:11,036 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-15 18:19:11,036 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=.6ecc4994dedd151de6f361eed0168eec
+2019-08-15 18:19:11,528 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:11,547 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': 'd831409d-d746-42ec-86c0-5e8a72d8d120', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:11,547 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Slot","startDate":"2019-08-15 06:04:11","endDate":"2019-08-15 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1565864351"}
+2019-08-15 18:19:11,547 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=
+2019-08-15 18:19:11,548 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=
+2019-08-15 18:19:11,548 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-15 18:19:11,548 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUxIn0=.2a17cbd4f342340ee7e1cb3842f88a18
+2019-08-15 18:19:11,815 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:11,816 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': 'db3a23b6-ab41-4101-8965-8420c0cfd7b5', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:11,816 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Hunter","startDate":"2019-08-15 18:04:11","endDate":"2019-08-15 18:19:10","pageIndex":"1","pageSize":"20","timestamp":"1565864351"}
+2019-08-15 18:19:11,816 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTEifQ==
+2019-08-15 18:19:11,816 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTEifQ==
+2019-08-15 18:19:11,816 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-15 18:19:11,816 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTEifQ==.00eb28b4cae5b9604e73b764a8828907
+2019-08-15 18:19:12,049 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:12,050 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': '5822c39b-465d-4b8b-a84b-d7e2aed42960', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:12,050 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Yoplay","startDate":"2019-08-15 06:04:11","endDate":"2019-08-15 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1565864352"}
+2019-08-15 18:19:12,050 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTIifQ==
+2019-08-15 18:19:12,050 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTIifQ==
+2019-08-15 18:19:12,050 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-15 18:19:12,050 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTE1IDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMTUgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjU4NjQzNTIifQ==.63e9b38f47eb63a0649760341c279561
+2019-08-15 18:19:12,269 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:12,269 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': 'e81b5dd3-1773-4c12-9a5d-21b64fb9e9a6', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:12,270 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Sport","startDate":"2019-08-15 06:04:11","endDate":"2019-08-15 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1565864352"}
+2019-08-15 18:19:12,270 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMTUgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0xNSAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NTg2NDM1MiJ9
+2019-08-15 18:19:12,270 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMTUgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0xNSAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NTg2NDM1MiJ9
+2019-08-15 18:19:12,270 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-15 18:19:12,270 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMTUgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0xNSAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NTg2NDM1MiJ9.b70b05f271f05ee50a7105747e92e244
+2019-08-15 18:19:12,494 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:12,494 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': 'b8651abc-856a-4772-a07a-25aaa74ed77d', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:12,494 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步AG交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 结束
+2019-08-15 18:19:12,494 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步PT交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 开始
+2019-08-15 18:19:13,017 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","startDate":"2019-08-15 18:04:11","endDate":"2019-08-15 18:19:10","pageIndex":"1","pageSize":"10","timestamp":"1565864353"}
+2019-08-15 18:19:13,018 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=
+2019-08-15 18:19:13,018 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=
+2019-08-15 18:19:13,018 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/PT/BetRecord
+2019-08-15 18:19:13,018 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=.11160fbb81de2fe206c2a957cc132601
+2019-08-15 18:19:13,227 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:13,228 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': '356c99db-f333-4c7d-bc56-5f54867bb710', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:13,400 | INFO | transactionDetails.py | transactionDetails | 115 | diffBetRecords | PT-1004老数据 :None
+2019-08-15 18:19:13,401 | INFO | transactionDetails.py | transactionDetails | 138 | diffBetRecords | diff后mysql:[]
+2019-08-15 18:19:13,401 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步PT交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 结束
+2019-08-15 18:19:13,401 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步KAIYUAN交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 开始
+2019-08-15 18:19:13,753 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","startDate":"2019-08-15 18:04:11","endDate":"2019-08-15 18:19:10","pageIndex":"1","pageSize":"10","timestamp":"1565864353"}
+2019-08-15 18:19:13,753 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=
+2019-08-15 18:19:13,753 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=
+2019-08-15 18:19:13,753 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/KAIYUAN/BetRecord
+2019-08-15 18:19:13,753 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0xNSAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTE1IDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY1ODY0MzUzIn0=.11160fbb81de2fe206c2a957cc132601
+2019-08-15 18:19:13,965 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-15 18:19:13,966 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Code': '9997', 'Success': False, 'Data': None, 'Guid': 'c2ff3479-6d73-44e5-bca8-1ae5ab8e0476', 'Message': 'IP Not Allow'}
+2019-08-15 18:19:14,137 | INFO | transactionDetails.py | transactionDetails | 115 | diffBetRecords | KAIYUAN-1003老数据 :None
+2019-08-15 18:19:14,137 | INFO | transactionDetails.py | transactionDetails | 138 | diffBetRecords | diff后mysql:[]
+2019-08-15 18:19:14,137 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步KAIYUAN交易记录 2019-08-15 18:04:11至 2019-08-15 18:19:10 结束
+2019-08-15 18:19:14,137 | INFO | transactionDetails.py | transactionDetails | 208 | job_1 | 更新redis中的交易记录

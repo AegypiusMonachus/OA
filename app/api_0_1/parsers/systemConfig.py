@@ -1,0 +1,216 @@
+from flask_restful.reqparse import RequestParser
+
+#会员等级-添加-------------------------------------------------------------
+member_level_parsers = RequestParser()
+
+member_level_parsers.add_argument('level',type=int, location=['form','json','args'])
+member_level_parsers.add_argument('levelName',type=str, location=['form','json','args'])
+member_level_parsers.add_argument('min_rk',type=float, location=['form','json','args'])
+member_level_parsers.add_argument('max_rk',type=float, location=['form','json','args'])
+member_level_parsers.add_argument('min_tk',type=float, location=['form','json','args'])
+member_level_parsers.add_argument('max_tk',type=float, location=['form','json','args'])
+member_level_parsers.add_argument('sx_Free',type=float, location=['form','json','args'])
+member_level_parsers.add_argument('mcfy',type=int, location=['form','json','args'],default=0)
+member_level_parsers.add_argument('tksc',type=int, location=['form','json','args'])
+member_level_parsers.add_argument('ms',type=int, location=['form','json','args'])
+member_level_parsers.add_argument('js',type=int, location=['form','json','args'])#处理人员
+member_level_parsers.add_argument('dkzfsxf', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('gsrkyh', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('xszfyh', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('zcscj', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('kscz', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('xz_Free', type=float, location=['form', 'json','args'])
+member_level_parsers.add_argument('remark', type=str, location=['form', 'json','args'])
+member_level_parsers.add_argument('page', type=int, location=['form', 'json','args'], default=1)
+member_level_parsers.add_argument('pageSize', type=int, location=['form', 'json','args'])
+member_level_parsers.add_argument('isBanned', type=int, location=['form', 'json','args'])
+member_level_parsers.add_argument('ckjhb', type=str)
+member_level_parsers.add_argument('danger', type=int ,default=0, location=['form', 'json','args'])
+member_level_parsers.add_argument('zfbmqckzt', type=int, location=['form', 'json','args'])
+
+#会员等级-修改-------------------------------------------------------------
+member_level_parser = RequestParser()
+member_level_parser.add_argument('level',type=int, location=['form','json','args'])
+member_level_parser.add_argument('levelName',type=str, location=['form','json','args'])
+member_level_parser.add_argument('min_rk',type=float, location=['form','json','args'])
+member_level_parser.add_argument('max_rk',type=float, location=['form','json','args'])
+member_level_parser.add_argument('min_tk',type=float, location=['form','json','args'])
+member_level_parser.add_argument('max_tk',type=float, location=['form','json','args'])
+member_level_parser.add_argument('sx_Free',type=float, location=['form','json','args'])
+member_level_parser.add_argument('mcfy',type=int, location=['form','json','args'])
+member_level_parser.add_argument('tksc',type=int, location=['form','json','args'])
+member_level_parser.add_argument('ms',type=int, location=['form','json','args'])
+member_level_parser.add_argument('js',type=int, location=['form','json','args'])#处理人员
+member_level_parser.add_argument('dkzfsxf', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('gsrkyh', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('xszfyh', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('zcscj', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('kscz', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('xz_Free', type=float, location=['form', 'json','args'])
+member_level_parser.add_argument('remark', type=str, location=['form', 'json','args'])
+member_level_parser.add_argument('page', type=int, location=['form', 'json','args'], required=False,default=1)
+member_level_parser.add_argument('pageSize', type=int, location=['form', 'json','args'], required=False,default=30)
+member_level_parser.add_argument('ckjhb', type=str)
+member_level_parser.add_argument('isBanned', type=int, location=['form', 'json','args'])
+member_level_parser.add_argument('danger', type=int, location=['form', 'json','args'])
+member_level_parser.add_argument('zfbmqckzt', type=int, location=['form', 'json','args'])
+
+#在线支付-------------------------------------------------------------
+sysadminBank_parsers = RequestParser()
+#sysadminBank_parsers.add_argument('id',type=int, location=['json','args'])
+sysadminBank_parsers.add_argument('uid',type=int, location=['form','json','args'])
+sysadminBank_parsers.add_argument('name',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('bank_online_id',type=int, location=['form','json','args'])
+sysadminBank_parsers.add_argument('pay_type',type=int, location=['form','json','args'])
+sysadminBank_parsers.add_argument('username',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('secret_key',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('code',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('tb',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('min_amount',type=float, location=['form','json','args'])
+sysadminBank_parsers.add_argument('max_amount',type=float, location=['form','json','args'])
+sysadminBank_parsers.add_argument('amount',type=float, location=['form','json','args'])
+sysadminBank_parsers.add_argument('accumulatedAmount',type=float, location=['form','json','args'])
+sysadminBank_parsers.add_argument('gradeList',type=str,location=['form','json','args'])
+sysadminBank_parsers.add_argument('validTime',type=int, location=['form','json','args'],default=10)
+sysadminBank_parsers.add_argument('remark',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('RecommendAmount',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('RecommendRemark',type=str, location=['form','json','args'])
+sysadminBank_parsers.add_argument('enable',type=int, location=['form','json','args'])
+sysadminBank_parsers.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+sysadminBank_parsers.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#在线支付-------------------------------------------------------------
+sysadminBank_parsers_post = RequestParser()
+#sysadminBank_parsers.add_argument('id',type=int, location=['json','args'])
+sysadminBank_parsers_post.add_argument('uid',type=int, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('name',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('bank_online_id',type=int, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('pay_type',type=int, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('username',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('secret_key',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('code',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('tb',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('min_amount',type=float, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('max_amount',type=float, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('amount',type=float, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('accumulatedAmount',type=float, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('gradeList',type=str,location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('validTime',type=int, location=['form','json','args'],default=10)
+sysadminBank_parsers_post.add_argument('remark',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('RecommendAmount',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('RecommendRemark',type=str, location=['form','json','args'])
+sysadminBank_parsers_post.add_argument('enable',type=int, location=['form','json','args'],default=1)
+sysadminBank_parsers_post.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+sysadminBank_parsers_post.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#在线支付-------------------------------------------------------------
+sysadminOnline_parsers = RequestParser()
+sysadminOnline_parsers.add_argument('uid',type=int, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('enable',type=int, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('username',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('name',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('code',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('secret_key',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('tb',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('min_amount',type=float, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('max_amount',type=float, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('amount',type=float, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('gradeList',location=['form','json','args'])
+sysadminOnline_parsers.add_argument('validTime',type=int, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('remark',type=str, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('type',type=int, location=['form','json','args'])
+sysadminOnline_parsers.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+sysadminOnline_parsers.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#返水-------------------------------------------------------------
+configFanshui = RequestParser()
+configFanshui.add_argument('name',type=str, location=['form','json','args'])
+configFanshui.add_argument('dml',type=float, location=['form','json','args'])
+configFanshui.add_argument('fsb',type=str, location=['form','json','args'])
+configFanshui.add_argument('sx',type=float, location=['form','json','args'])
+configFanshui.add_argument('jh',type=float, location=['form','json','args'])
+configFanshui.add_argument('ss_enable',type=int, location=['form','json','args'])
+configFanshui.add_argument('ss_zdlqxe',type=float, location=['form','json','args'])
+configFanshui.add_argument('ss_zglqxe',type=float, location=['form','json','args'])
+configFanshui.add_argument('ss_jh',type=float, location=['form','json','args'])
+configFanshui.add_argument('ylc',type=str, location=['form','json','args'])
+configFanshui.add_argument('fsmx',type=str, location=['form','json','args'])
+configFanshui.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configFanshui.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#佣金-------------------------------------------------------------
+configYongjin = RequestParser()
+configYongjin.add_argument('name',type=str, location=['form','json','args'])
+configYongjin.add_argument('zdtze',type=float, location=['form','json','args'])
+configYongjin.add_argument('dbcksxf',type=float, location=['form','json','args'])
+configYongjin.add_argument('cksxfsx',type=float, location=['form','json','args'])
+configYongjin.add_argument('dbqksxf',type=float, location=['form','json','args'])
+configYongjin.add_argument('qksxfsx',type=float, location=['form','json','args'])
+configYongjin.add_argument('zdckje',type=float, location=['form','json','args'])
+configYongjin.add_argument('tyb',type=str, location=['form','json','args'])
+configYongjin.add_argument('enable',type=int, location=['form','json','args'])
+configYongjin.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configYongjin.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#站台设置-------------------------------------------------------------
+configWebsite = RequestParser()
+configWebsite.add_argument('webName',type=str, location=['form','json','args'])
+configWebsite.add_argument('agentName',type=str, location=['form','json','args'])
+configWebsite.add_argument('loginVerified',type=int, location=['form','json','args'])
+configWebsite.add_argument('regVerified',type=int, location=['form','json','args'])
+configWebsite.add_argument('regQAVerified',type=int, location=['form','json','args'])
+configWebsite.add_argument('errorCount',type=int, location=['form','json','args'])
+configWebsite.add_argument('puzzleVerifiedLogin',type=int, location=['form','json','args'])
+configWebsite.add_argument('puzzleVerifiedReg',type=int, location=['form','json','args'])
+configWebsite.add_argument('landingAreaVerification',type=int, location=['form','json','args'])
+configWebsite.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configWebsite.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#会员端-------------------------------------------------------------
+configMemberService_parsers = RequestParser()
+configMemberService_parsers.add_argument('name',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('pmd',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('member_reg',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('agent_reg',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('remark',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('errorCount',type=str, location=['form','json','args'])
+configMemberService_parsers.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configMemberService_parsers.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#会员端-------------------------------------------------------------
+bank_online_parsers = RequestParser()
+bank_online_parsers.add_argument('grade', type=int, location=['form', 'json','args'])
+bank_online_parsers.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+bank_online_parsers.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+
+
+
+#ip白名单-------------------------------------------------------------
+#ip白名单创建-------------------------------------------------------------
+configIplist_parsers_post = RequestParser()
+# configIplist_parsers.add_argument('id', type=int)
+configIplist_parsers_post.add_argument('ip', type=str)
+configIplist_parsers_post.add_argument('state',type=int,default=1)
+configIplist_parsers_post.add_argument('uid',type=int)
+configIplist_parsers_post.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configIplist_parsers_post.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+#ip白名单修改-------------------------------------------------------------
+configIplist_parsers_put = RequestParser()
+# configIplist_parsers.add_argument('id', type=int)
+configIplist_parsers_put.add_argument('ip', type=str)
+configIplist_parsers_put.add_argument('state',type=int)
+configIplist_parsers_put.add_argument('uid',type=int)
+configIplist_parsers_put.add_argument('page', type=int, location=['form', 'json','args'],default=1)
+configIplist_parsers_put.add_argument('pageSize', type=int, location=['form', 'json','args'],default=30)
+
+
+
+
+
+
+
+
+
+

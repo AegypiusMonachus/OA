@@ -1,0 +1,1046 @@
+2019-08-23 10:31:27,079 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 126, in put
+    OperationHistory().PublicAgensData(2003, audit)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 227, in PublicAgensData
+    m_args['username'] = self.getMember(audit.memberId)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 52, in getMember
+    deposit = db.session.query(Member.username).filter(Member.id == uid).first()[0]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 136, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 10:32:38,114 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 126, in put
+    OperationHistory().PublicAgensData(2003, audit)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 227, in PublicAgensData
+    m_args['username'] = self.getMember(audit.memberId)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 52, in getMember
+    deposit = db.session.query(Member.username).filter(Member.id == uid).first()[0]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 136, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:13:52,950 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/memberBankAccounts [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'bankId' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 346, in put
+    db.session.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 978, in _emit_update_statements
+    statement, multiparams
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'bankId' cannot be null")
+[SQL: UPDATE blast_member_bank SET `bankId`=%(bankId)s, account=%(account)s, username=%(username)s, `countName`=%(countName)s WHERE blast_member_bank.id = %(blast_member_bank_id)s]
+[parameters: {'bankId': None, 'account': None, 'username': None, 'blast_member_bank_id': 16, 'countName': '上海'}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 351, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:14:21,864 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/memberBankAccounts [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'bankId' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 346, in put
+    db.session.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    update,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 978, in _emit_update_statements
+    statement, multiparams
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'bankId' cannot be null")
+[SQL: UPDATE blast_member_bank SET `bankId`=%(bankId)s, account=%(account)s, username=%(username)s, `countName`=%(countName)s WHERE blast_member_bank.id = %(blast_member_bank_id)s]
+[parameters: {'bankId': None, 'account': None, 'username': None, 'blast_member_bank_id': 16, 'countName': '上海'}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 351, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:23:13,792 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/memberBankAccounts [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'bankId' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 346, in put
+    db.session.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 1120, in _emit_insert_statements
+    statement, params
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'bankId' cannot be null")
+[SQL: INSERT INTO tb_member_bank_account_modification_logs (`userId`, `memberId`, `bankId`, `accountNumber`, `accountName`, `subbranchName`, province, city, remark, time) VALUES (%(userId)s, %(memberId)s, %(bankId)s, %(accountNumber)s, %(accountName)s, %(subbranchName)s, %(province)s, %(city)s, %(remark)s, %(time)s)]
+[parameters: {'bankId': None, 'city': None, 'time': 1566534193, 'subbranchName': '上海', 'accountNumber': None, 'remark': None, 'province': None, 'accountName': None, 'userId': 3, 'memberId': 46}]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/bank_accounts.py", line 351, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:35:54,538 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 122, in put
+    OperationHistory().PublicAgensData(2003, audit)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 227, in PublicAgensData
+    m_args['username'] = self.getMember(audit.memberId)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 52, in getMember
+    deposit = db.session.query(Member.username).filter(Member.id == uid).first()[0]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 202, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:43:25,646 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 125, in put
+    member['username'] = audit.username
+UnboundLocalError: local variable 'member' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 192, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 202, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:46:02,129 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 126, in put
+    member['username'] = audit.username
+UnboundLocalError: local variable 'member' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 195, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 205, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:47:20,599 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 126, in put
+    member['username'] = audit.username
+UnboundLocalError: local variable 'member' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 199, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 209, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:48:33,237 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 178, in put
+    del agent_bank_modification_logs['createTime']
+TypeError: 'MemberBankAccount' object does not support item deletion
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 196, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 200, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 210, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:52:51,482 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 178, in put
+    del agent_bank_modification_logs['createTime']
+TypeError: 'MemberBankAccount' object does not support item deletion
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 199, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 203, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 213, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:54:12,869 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 179, in put
+    del agent_bank_modification_logs['createTime']
+TypeError: 'MemberBankAccount' object does not support item deletion
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 200, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 204, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 214, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:55:30,794 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 179, in put
+    del agent_bank_modification_logs['createTime']
+TypeError: 'MemberBankAccount' object does not support item deletion
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 201, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 205, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 215, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 12:56:47,228 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 179, in put
+    del agent_bank_modification_logs['createTime']
+TypeError: 'MemberBankAccount' object does not support item deletion
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 203, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 207, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 217, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 13:00:10,097 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 186, in put
+    agent_bank = MemberBankAccount(**agent_bank)
+  File "<string>", line 4, in __init__
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/state.py", line 441, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/state.py", line 438, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/ext/declarative/base.py", line 834, in _declarative_constructor
+    "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+TypeError: 'time' is an invalid keyword argument for MemberBankAccount
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 205, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 209, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 219, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 13:02:57,168 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 187, in put
+    agent_bank = MemberBankAccount(**agent_bank)
+  File "<string>", line 4, in __init__
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/state.py", line 441, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/state.py", line 438, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/ext/declarative/base.py", line 834, in _declarative_constructor
+    "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+TypeError: 'userId' is an invalid keyword argument for MemberBankAccount
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 206, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 210, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 220, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 13:06:32,630 | ERROR | app.py | app | 1761 | log_exception | Exception on /api/0.1/agentAudits/1 [PUT]
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 198, in put
+    OperationHistory().PublicAgensData(2003, member.id)
+  File "/home/yc/feature_As/app/models/memeber_history.py", line 217, in PublicAgensData
+    m_args['uid'] = audit.memberId
+AttributeError: 'int' object has no attribute 'memberId'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 205, in put
+    db.session.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 538, in execute
+    self.dependency_processor.process_deletes(uow, states)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/dependency.py", line 547, in process_deletes
+    state, child, None, True, uowcommit, False
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/dependency.py", line 604, in _synchronize
+    sync.clear(dest, self.mapper, self.prop.synchronize_pairs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/sqlalchemy/orm/sync.py", line 87, in clear
+    "column '%s' on instance '%s'" % (r, orm_util.state_str(dest))
+AssertionError: Dependency rule tried to blank-out primary key column 'tb_member_personal_infos.id' on instance '<MemberPersonalInfo at 0x7f3c9cc01240>'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 210, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 480, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 595, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/yc/feature_As/app/api_0_1/resources/agent_audits.py", line 220, in put
+    abort(500)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/flask_restful/__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 707, in abort
+    return _aborter(status, *args, **kwargs)
+  File "/home/yc/feature_As/venv/lib/python3.5/site-packages/werkzeug/exceptions.py", line 687, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.InternalServerError: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.
+2019-08-23 18:19:10,265 | INFO | transactionDetails.py | transactionDetails | 148 | job_1 | 同步交易记录 2019-08-23 18:04:11至 2019-08-23 18:19:10 开始

@@ -1,0 +1,93 @@
+2019-08-20 18:19:10,072 | INFO | transactionDetails.py | transactionDetails | 148 | job_1 | 同步交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 开始
+2019-08-20 18:19:11,042 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步AG交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 开始
+2019-08-20 18:19:11,555 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Live","startDate":"2019-08-20 06:04:11","endDate":"2019-08-20 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1566296351"}
+2019-08-20 18:19:11,559 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzUxIn0=
+2019-08-20 18:19:11,560 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzUxIn0=
+2019-08-20 18:19:11,561 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-20 18:19:11,561 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJMaXZlIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzUxIn0=.7965d7ea94e090062ac8dd3f08e51051
+2019-08-20 18:19:14,138 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:14,142 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': '51c111d6-bc7b-4980-b854-6005a2010a35'}
+2019-08-20 18:19:14,142 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Slot","startDate":"2019-08-20 06:04:11","endDate":"2019-08-20 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1566296354"}
+2019-08-20 18:19:14,142 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU0In0=
+2019-08-20 18:19:14,142 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU0In0=
+2019-08-20 18:19:14,142 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-20 18:19:14,142 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTbG90Iiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAwNjowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDA2OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMjAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU0In0=.4eb196199b69184166025432848850a2
+2019-08-20 18:19:14,374 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:14,374 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': '8cac3fc4-b22a-463c-b6d6-e3057c7aa103'}
+2019-08-20 18:19:14,375 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Hunter","startDate":"2019-08-20 18:04:11","endDate":"2019-08-20 18:19:10","pageIndex":"1","pageSize":"20","timestamp":"1566296354"}
+2019-08-20 18:19:14,375 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==
+2019-08-20 18:19:14,375 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==
+2019-08-20 18:19:14,375 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-20 18:19:14,375 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJIdW50ZXIiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDE4OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMTg6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==.500c2b98ba324cf9ffcd2a6fd5dc984d
+2019-08-20 18:19:14,587 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:14,587 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': '91ca7eb6-6c7d-4466-ac14-6c48de6b05a1'}
+2019-08-20 18:19:14,588 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Yoplay","startDate":"2019-08-20 06:04:11","endDate":"2019-08-20 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1566296354"}
+2019-08-20 18:19:14,588 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==
+2019-08-20 18:19:14,588 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==
+2019-08-20 18:19:14,588 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-20 18:19:14,588 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJZb3BsYXkiLCJzdGFydERhdGUiOiIyMDE5LTA4LTIwIDA2OjA0OjExIiwiZW5kRGF0ZSI6IjIwMTktMDgtMjAgMDY6MTk6MTAiLCJwYWdlSW5kZXgiOiIxIiwicGFnZVNpemUiOiIyMCIsInRpbWVzdGFtcCI6IjE1NjYyOTYzNTQifQ==.da4e6f64f8401a94ae47d9db22f202d3
+2019-08-20 18:19:14,802 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:14,803 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': 'b74baa54-8830-4827-8011-52d77ce8efa8'}
+2019-08-20 18:19:14,803 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","gameType":"Sport","startDate":"2019-08-20 06:04:11","endDate":"2019-08-20 06:19:10","pageIndex":"1","pageSize":"20","timestamp":"1566296354"}
+2019-08-20 18:19:14,803 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMjAgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0yMCAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NjI5NjM1NCJ9
+2019-08-20 18:19:14,803 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMjAgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0yMCAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NjI5NjM1NCJ9
+2019-08-20 18:19:14,803 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/AG/BetRecord
+2019-08-20 18:19:14,803 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwiZ2FtZVR5cGUiOiJTcG9ydCIsInN0YXJ0RGF0ZSI6IjIwMTktMDgtMjAgMDY6MDQ6MTEiLCJlbmREYXRlIjoiMjAxOS0wOC0yMCAwNjoxOToxMCIsInBhZ2VJbmRleCI6IjEiLCJwYWdlU2l6ZSI6IjIwIiwidGltZXN0YW1wIjoiMTU2NjI5NjM1NCJ9.2b59d6849997136d176f962707c60e04
+2019-08-20 18:19:15,021 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:15,022 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': 'c5e09912-a127-4d61-b38a-037897ce5e66'}
+2019-08-20 18:19:15,022 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步AG交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 结束
+2019-08-20 18:19:15,022 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步PT交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 开始
+2019-08-20 18:19:15,570 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","startDate":"2019-08-20 18:04:11","endDate":"2019-08-20 18:19:10","pageIndex":"1","pageSize":"10","timestamp":"1566296355"}
+2019-08-20 18:19:15,571 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU1In0=
+2019-08-20 18:19:15,571 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU1In0=
+2019-08-20 18:19:15,571 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/PT/BetRecord
+2019-08-20 18:19:15,571 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU1In0=.e351bf0c7a06e653e87243e475db3309
+2019-08-20 18:19:15,777 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:15,779 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': '6b98d6d3-c8ca-4421-ad32-2b3084d4daa0'}
+2019-08-20 18:19:15,968 | INFO | transactionDetails.py | transactionDetails | 115 | diffBetRecords | PT-1004老数据 :None
+2019-08-20 18:19:15,968 | INFO | transactionDetails.py | transactionDetails | 138 | diffBetRecords | diff后mysql:[]
+2019-08-20 18:19:15,969 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步PT交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 结束
+2019-08-20 18:19:15,969 | INFO | transactionDetails.py | transactionDetails | 154 | job_1 | 同步KAIYUAN交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 开始
+2019-08-20 18:19:16,328 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 122 | sign | b46前：{"merchantCode":"hKJxlZ75EQIAa","startDate":"2019-08-20 18:04:11","endDate":"2019-08-20 18:19:10","pageIndex":"1","pageSize":"10","timestamp":"1566296356"}
+2019-08-20 18:19:16,329 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 124 | sign | b46后：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU2In0=
+2019-08-20 18:19:16,329 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 128 | sign | MD5前：GoRPtlk351oYKfwoGmRXzIGozmHLxQcCWIvE5P8y4LC9yBSxsQrXowI2be9jeTrY8y5wCQDBOfduN8LtASPyUWFeyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU2In0=
+2019-08-20 18:19:16,329 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 115 | doPost | 请求地址：http://api.egame58.com/API/KAIYUAN/BetRecord
+2019-08-20 18:19:16,329 | INFO | abstractEntertainmentCity.py | abstractEntertainmentCity | 116 | doPost | 请求参数：eyJtZXJjaGFudENvZGUiOiJoS0p4bFo3NUVRSUFhIiwic3RhcnREYXRlIjoiMjAxOS0wOC0yMCAxODowNDoxMSIsImVuZERhdGUiOiIyMDE5LTA4LTIwIDE4OjE5OjEwIiwicGFnZUluZGV4IjoiMSIsInBhZ2VTaXplIjoiMTAiLCJ0aW1lc3RhbXAiOiIxNTY2Mjk2MzU2In0=.44540fe3f2c2372a5918c353925c3cf7
+2019-08-20 18:19:16,522 | ERROR | transactionDetails.py | transactionDetails | 99 | analysisPagination | argument of type 'NoneType' is not iterable
+Traceback (most recent call last):
+  File "/home/yc/feature_As/app/entertainmentcity/transactionDetails.py", line 96, in analysisPagination
+    if 'record' in respJson['Data']:
+TypeError: argument of type 'NoneType' is not iterable
+2019-08-20 18:19:16,522 | ERROR | transactionDetails.py | transactionDetails | 100 | analysisPagination | 交易记录格式错误：没有数据信息：{'Data': None, 'Code': '9997', 'Message': 'IP Not Allow', 'Success': False, 'Guid': 'fc91adad-58af-4cf1-b031-1e36f8217e88'}
+2019-08-20 18:19:16,700 | INFO | transactionDetails.py | transactionDetails | 115 | diffBetRecords | KAIYUAN-1003老数据 :None
+2019-08-20 18:19:16,700 | INFO | transactionDetails.py | transactionDetails | 138 | diffBetRecords | diff后mysql:[]
+2019-08-20 18:19:16,700 | INFO | transactionDetails.py | transactionDetails | 204 | job_1 | 同步KAIYUAN交易记录 2019-08-20 18:04:11至 2019-08-20 18:19:10 结束
+2019-08-20 18:19:16,700 | INFO | transactionDetails.py | transactionDetails | 208 | job_1 | 更新redis中的交易记录
+2019-08-20 18:46:11,166 | INFO | members.py | members | 1273 | put | accessLog开始：{'sessionKey': 'v55u0133skci4bo4i3ovskt8v3', 'username': 'T0642572138'}
+2019-08-20 18:46:12,293 | INFO | members.py | members | 1331 | put | accessLog完成：{'sessionKey': 'v55u0133skci4bo4i3ovskt8v3', 'username': 'T0642572138'}
+2019-08-20 18:46:47,265 | INFO | members.py | members | 1273 | put | accessLog开始：{'sessionKey': 'i6mftg8fjb9ih6rjpmhr73u272', 'username': 'T0632159567'}
+2019-08-20 18:46:47,895 | INFO | members.py | members | 1331 | put | accessLog完成：{'sessionKey': 'i6mftg8fjb9ih6rjpmhr73u272', 'username': 'T0632159567'}
